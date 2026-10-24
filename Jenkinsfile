@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -8,14 +9,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'dotnet restore'
-                sh 'dotnet build --configuration Release --no-restore'
+                bat 'dotnet restore'
+                bat 'dotnet build --configuration Release --no-restore'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'dotnet test --configuration Release'
+                bat 'dotnet test --configuration Release'
             }
         }
     }

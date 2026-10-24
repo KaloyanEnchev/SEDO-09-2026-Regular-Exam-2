@@ -183,7 +183,7 @@ namespace Homies.Tests
 
         [Test]
         public async Task Joined_ShouldReturnUserJoinedEvents()
-        {
+        {    //new event test
             var eventEntity = new Event
             {
                 Id = 1,

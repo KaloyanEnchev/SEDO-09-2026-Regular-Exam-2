@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -11,7 +15,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'dotnet test --configuration Release --no-build'
+                sh 'dotnet test --configuration Release'
             }
         }
     }
